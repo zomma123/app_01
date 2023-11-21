@@ -19907,7 +19907,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'MyApp1Pos',
+  name: "MyApp1Pos",
   data: function data() {
     return {};
   },
@@ -20836,7 +20836,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "POS", -1 /* HOISTED */);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row\"><!-- ສ່ວນ​ສະ​ແດງ​ລາຍ​ການ​ຂາຍຂອງ​ສິນ​ຄ້າ --><div class=\"col-md-7\"><div class=\"card\"><div class=\"card-body\"><input type=\"text\" class=\"form-control\" placeholder=\"ຄົ້ນ​ຫາ.....\"></div><div class=\"row pt-3\" style=\"overflow:auto;height:73vh;\"><div class=\"col-md-2 mb-3\"><div class=\"card pointer\"><!--v-if--><img class=\"card-img-top mb-1 image_size\" src=\"assets/img/1700451161.png\" alt=\"Card image cap\"><div class=\"text-center\"><span class=\"fw-bold\">hhhh</span><br><span class=\"text_price\">205,000 ກີບ </span></div></div></div></div></div></div><!-- ສ່ວນ​ສະ​ແດງ​ລາຍ​ການ​ທີ່​ເລືອກ --><div class=\"col-md-5\"><div class=\"card\"><div class=\"card-body\"><div class=\"mb-2\"><label for=\"customer-name\"> ຊື່​ລູກ​ຄ້າ: </label><input type=\"text\" class=\"form-control\" placeholder=\"ປ້ອນ​ຊື່​ລູກ​ຄ້າ.....\"></div><div class=\"mb-2\"><label for=\"customer-tel\"> ເບີ​ໂທ: </label><input type=\"text\" class=\"form-control\" placeholder=\"ປ້ອນ​ຊື່​ລູກ​ຄ້າ.....\"></div><div class=\"d-flex justify-content-between\"><span> ຈຳ​ນວນ​ເງິນ​ທັງ​ໝົດ: </span><span> 00000000 </span></div><div class=\"mt-2\"><button type=\"button\" class=\"btn rounded-pill btn-label-info\" style=\"width:100%;\"> ຊຳ​ລະ​ເງິນ </button></div><div style=\"overflow:auto;height:50vh;\"><table class=\"table table-bordered text-center mt-3\"><thead><tr><th class=\"fw-bold\" style=\"width:20px;\">ລຳດັບ</th><th class=\"fw-bold\">ສິນຄ້າ</th><th class=\"fw-bold\">ຈຳນວນ</th><th class=\"fw-bold\">ລາຄາ</th><th class=\"fw-bold\"> ລາຄາລວມ <!-- (&lt;i\r\n                        class=&quot;bx bxs-x-circle pointer text-danger&quot;\r\n                      &gt;&lt;/i\r\n                      &gt;) --></th></tr></thead><tbody><tr></tr></tbody></table></div></div></div></div></div>", 1);
 var _hoisted_2 = [_hoisted_1];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, _hoisted_2);
