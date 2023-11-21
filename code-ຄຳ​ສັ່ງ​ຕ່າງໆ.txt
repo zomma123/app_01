@@ -13,5 +13,3 @@
 - git push                        : ເປັນ​ການ​ ອັດ​ໂຫຼດ​ code ຂຶ້ນ github
 - git pull                        : ເປັນ​ການ ອັດ​ເດດ code ລ່າ​ສຸດ​ຈາກ github
 - git add . && git commit -m "ຄຳ​ອະ​ທິ​ບາຍ" && git push : ວິ​ທີ​ຂຽນ​ລວມ​ກັນເປັນ​ແຖວດຽວ
-
-KJHLKGKJHLHGLHGFJY K1
