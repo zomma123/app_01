@@ -75,12 +75,44 @@ class StoreController extends Controller
     public function update($id, Request $request){
         try {
         $store= Store::find($id);
-        $store->update([
-            'name'=>$request->name,
-            'amount'=>$request->amount,
-            'price_buy'=>$request->price_buy,
-            'price_sell'=>$request->price_sell,
-        ]);
+        
+        if ($request->file('image')) {
+            $upload_path = "assets/img";
+            if ($store->image != '') {
+                if (file_exists($upload_path . '/' . $store->image)) {
+                    unlink($upload_path . '/' . $store->image);
+                }
+            }
+
+            $generated_new_name = time() . '.' . $request->image->getClientOriginalExtension();
+            $image = $request->file('image');
+            $img = Image::make($image->getRealpath());
+            $img->resize(800, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+
+            $img->save($upload_path . '/' . $generated_new_name);
+
+            // ອັບເດດ
+            $store->update([
+                'name' => $request->name,
+                'image' => $generated_new_name,
+                'amount' => $request->amount,
+                'price_buy' => $request->price_buy,
+                'price_sell' => $request->price_sell,
+            ]);
+
+        } else {
+            $generated_new_name = "";
+
+            // ອັບເດດ
+            $store->update([
+                'name' => $request->name,
+                'amount' => $request->amount,
+                'price_buy' => $request->price_buy,
+                'price_sell' => $request->price_sell,
+            ]);
+        }
 
         $success = true;
             $massage = "ແກ້​ໄຂ​ ຂໍ້​ມູນ​ສຳ​ເລັດແລ້ວ";

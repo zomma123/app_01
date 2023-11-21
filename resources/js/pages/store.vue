@@ -260,7 +260,7 @@
         </div>
 
         <!-- pagination page-->
-        <div class="d-flex justify-content- me-2">
+        <div class="d-flex justify-content-end me-2">
           <pagination
             :pagination="StoreData"
             :offset="4"
@@ -475,6 +475,17 @@ export default {
             this.FormStore.amount = response.data.amount;
             this.FormStore.price_buy = response.data.price_buy;
             this.FormStore.price_sell = response.data.price_sell;
+
+            // ກຳນົດຄ່າໃຫ້ຮູບພາບ
+            this.image_product = response.data.image;
+
+            if (response.data.image) {
+              this.image_preview =
+                window.location.origin + "/assets/img/" + response.data.image;
+            } else {
+              this.image_preview =
+                window.location.origin + "/assets/img/upload.jpg";
+            }
           })
           .catch((error) => {
             console.log(error);

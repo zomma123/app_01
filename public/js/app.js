@@ -20200,6 +20200,14 @@ __webpack_require__.r(__webpack_exports__);
           _this2.FormStore.amount = response.data.amount;
           _this2.FormStore.price_buy = response.data.price_buy;
           _this2.FormStore.price_sell = response.data.price_sell;
+
+          // ກຳນົດຄ່າໃຫ້ຮູບພາບ
+          _this2.image_product = response.data.image;
+          if (response.data.image) {
+            _this2.image_preview = window.location.origin + "/assets/img/" + response.data.image;
+          } else {
+            _this2.image_preview = window.location.origin + "/assets/img/upload.jpg";
+          }
         })["catch"](function (error) {
           console.log(error);
         });
@@ -21214,7 +21222,7 @@ var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" ລຶບ");
 var _hoisted_39 = [_hoisted_37, _hoisted_38];
 var _hoisted_40 = {
-  "class": "d-flex justify-content- me-2"
+  "class": "d-flex justify-content-end me-2"
 };
 var _hoisted_41 = {
   "class": "d-flex justify-content-end"
