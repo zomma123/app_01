@@ -9,7 +9,7 @@
   <!-- add login -->
   <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-  <title>ຊົມ​ມາ</title>
+  <title> zomma phiwthammavong </title>
 
 
   <link rel="stylesheet" href="{{mix('css/app.css')}}" type="text/css">

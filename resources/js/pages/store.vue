@@ -417,6 +417,7 @@ export default {
         FormDataStore.append("price_buy", this.FormStore.price_buy);
         FormDataStore.append("price_sell", this.FormStore.price_sell);
         FormDataStore.append("image", this.image_product);
+        FormDataStore.append("acc_type", "expense");
         this.$axios.get("/sanctum/csrf-cookie").then((response) => {
           this.$axios
             .post("/api/store/add", FormDataStore, {headers: { "content-type": "multipart/form-data" }, })

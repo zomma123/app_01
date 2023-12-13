@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Store;
+use App\Models\Transection;
 use Intervention\Image\Facades\Image;
 
 class StoreController extends Controller
@@ -38,6 +39,38 @@ class StoreController extends Controller
             $store->price_sell = $request->price_sell;
             $store->save();
 
+            $product_id_new = $store->id;
+            // ບັນທຶກ ລາຍຈ່າຍ ສັ່ງຊື້ສິນຄ້າ
+            $number = 1;
+            $tran = Transection::all()->sortByDesc('id')->take(1)->toArray();
+
+            foreach($tran as $new){
+                $number = $new["tran_id"];
+            }
+            // ຕົວຢ່າງ INC00001
+            if($number !=''){
+                $number1 = str_replace("INC","",$number); // 00001
+                $number2 = str_replace("EXP","",$number1);
+                $number3 = (int)$number2+1; // 1+1 = 2
+                $length = 5;
+                $number = substr(str_repeat(0,$length).$number3, - $length); //00002
+            }
+
+            if($request->acc_type == "income") {
+                $tnum = "INC";
+            } elseif($request->acc_type == "expense") {
+                $tnum = "EXP";
+            }
+
+            $trans = new Transection();
+            $trans->tran_id = $tnum.$number;
+            $trans->product_id = $product_id_new;
+            $trans->tran_type = $request->acc_type;
+            $trans->tran_detail = "ນຳເຂົ້າສິນຄ້າໃໝ່ ".$request->name;
+            $trans->amount = $request->amount;
+            $trans->price = $request->amount*$request->price_buy;
+            $trans->save();
+
             $success = true;
             $massage = "ເພີ່ມ​ຂໍ້​ມູນ​ສຳ​ເລັດ";
 
@@ -60,7 +93,7 @@ class StoreController extends Controller
         
         $search = \Request::get('search');
         $store = Store::orderBy('id', 'desc')->where('id', 'LIKE', "%$search%")->orWhere('name', 'LIKE', "%$search%")
-        ->paginate(3)->toArray();
+        ->paginate(6)->toArray();
         return array_reverse($store);
 }
 

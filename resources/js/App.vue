@@ -20,8 +20,9 @@
           v-if="isLogin"
           id="layout-menu"
           class="layout-menu menu-vertical menu bg-menu-theme"
-        >
-          <div class="app-brand demo">
+        ><br>
+        <h1 class="menu justify-content-center">ເມ​ນູລາຍ​ການ</h1>
+          <!-- <div class="app-brand demo">
             <a href="index.html" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <svg
@@ -110,7 +111,7 @@
             >
               <i class="bx bx-chevron-left bx-sm align-middle"></i>
             </a>
-          </div>
+          </div> -->
 
           <div class="menu-inner-shadow"></div>
 
@@ -933,7 +934,7 @@
                 class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column"
               >
                 <div class="mb-2 mb-md-0">
-                  © ຊົມ​ມາ ຜີວ​ທຳ​ມະ​ວົງ ❤️
+                  © ຊົມ​ມາ ຜີວ​ທຳ​ມະ​ວົງ
                   <a
                     href="https://themeselection.com"
                     target="_blank"

@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TransectionController;
+use App\Http\Controllers\BillController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,8 @@ Route:: post("register", [UserController::class, "register"]);
 Route:: post("login", [UserController::class, "login"]);
 Route:: post("logout", [UserController::class, "logout"]);
 
+Route:: get("bill/{id}", [BillController::class, "index"]);
+
 
 Route::group(["prefix"=>"store","middleware"=>"auth:sanctum"], function(){
     Route::post("add", [StoreController::class, "add"]);
@@ -31,4 +35,8 @@ Route::group(["prefix"=>"store","middleware"=>"auth:sanctum"], function(){
     Route::get("edit/{id}", [StoreController::class, "edit"]);
     Route::post("update/{id}", [StoreController::class, "update"]);
     Route::delete("delete/{id}", [StoreController::class, "delete"]);
+});
+
+Route::group(["prefix"=>"transection","middleware"=>"auth:sanctum"], function(){
+    Route::post("add", [TransectionController::class, "add"]);
 });
