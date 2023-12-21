@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TransectionController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\BillController;
 
 /*
@@ -39,4 +40,10 @@ Route::group(["prefix"=>"store","middleware"=>"auth:sanctum"], function(){
 
 Route::group(["prefix"=>"transection","middleware"=>"auth:sanctum"], function(){
     Route::post("add", [TransectionController::class, "add"]);
+    Route::post("/", [TransectionController::class, "index"]);
+});
+
+Route::group(["prefix"=>"report","middleware"=>"auth:sanctum"], function(){
+    Route::post("/", [ReportController::class, "index"]);
+    Route::get("/dashgrap", [ReportController::class, "dashgrap"]);
 });

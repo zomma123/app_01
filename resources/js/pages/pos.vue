@@ -391,6 +391,9 @@ export default {
             this.ListOrder = [];
             // clear ເງິນທີ່ຮັບນຳລູກຄ້າ
             this.CashAmount = "";
+            // ເຄຍ​ຂໍ້​ມູນ​ລູກ​ຄ້າ
+            this.cus_name = "";
+            this.cus_tel = "";
             // ອັບເດດລາຍການ ສັ່ງຊື້
             this.getDataStore();
 

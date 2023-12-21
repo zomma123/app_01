@@ -1,80 +1,7 @@
 <template>
   <div>
-    <div class="row">
-      <div class="col-lg-3 col-md-3 col-6 mb-4">
-        <div class="card">
-          <div class="card-body pb-0">
-            <span class="d-block fw-medium fw-bold"> ລາຍ​ຮັບ</span>
-          </div>
-
-          <div class="p-3 pt-2 d-flex justify-content-between">
-            <i class="bx bx-line-chart"></i>
-            <span> 0 ກີບ</span>
-          </div>
-          <div class="resize-triggers">
-            <div class="expand-trigger">
-              <div style="width: 205px; height: 180px"></div>
-            </div>
-            <div class="contract-trigger"></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 mb-4">
-        <div class="card">
-          <div class="card-body pb-0">
-            <span class="d-block fw-medium fw-bold"> ລາຍ​ຈ່າຍ</span>
-          </div>
-
-          <div class="p-3 pt-2 d-flex justify-content-between">
-            <i class="bx bx-line-chart"></i>
-            <span> 0 ກີບ</span>
-          </div>
-          <div class="resize-triggers">
-            <div class="expand-trigger">
-              <div style="width: 205px; height: 180px"></div>
-            </div>
-            <div class="contract-trigger"></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 mb-4">
-        <div class="card">
-          <div class="card-body pb-0">
-            <span class="d-block fw-medium fw-bold"> ກ​ຳ​ໄລ</span>
-          </div>
-
-          <div class="p-3 pt-2 d-flex justify-content-between">
-            <i class="bx bx-line-chart"></i>
-            <span> 0 ກີບ</span>
-          </div>
-          <div class="resize-triggers">
-            <div class="expand-trigger">
-              <div style="width: 205px; height: 180px"></div>
-            </div>
-            <div class="contract-trigger"></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-6 mb-4">
-        <div class="card">
-          <div class="card-body pb-0">
-            <span class="d-block fw-medium fw-bold"> ສະ​ຕ໋ອກ​ສິນ​ຄ້າ</span>
-          </div>
-
-          <div class="p-3 pt-2 d-flex justify-content-between">
-            <i class="bx bx-line-chart"></i>
-            <span> 0 ກີບ</span>
-          </div>
-          <div class="resize-triggers">
-            <div class="expand-trigger">
-              <div style="width: 205px; height: 180px"></div>
-            </div>
-            <div class="contract-trigger"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <store-report/>
+    
     <!-- tables -->
     <div class="card">
       <div v-if="!FormShow">
@@ -293,7 +220,9 @@
 </template>
 
 <script>
+import StoreReport from '../components/StoreReport.vue';
 export default {
+  components: { StoreReport },
   name: "MyApp1Store",
 
   data() {
